@@ -1,0 +1,769 @@
+\documentclass{fast-nuces-bs}
+
+\usepackage{blindtext}
+\usepackage{mathptmx}% Times Roman font
+\usepackage[T1]{fontenc}
+\usepackage{lipsum} 
+\usepackage{sectsty}
+\usepackage{tikz-uml}
+\usepackage{titlesec}
+\usepackage{float}
+
+% Information about the Thesis 
+% -----------------------------------------------------------------------------
+% (All are compulsory, do not delete any line other than author Information)
+% For e.g., usually there are 3 students in a group, so leave authorone, 
+% authortwo, and authorthree, and delete authorfour.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\department{Department of Data Science}
+\faculty{Computer Science}
+\degreename{Computer Science}
+\campuscity{Islamabad}
+\authorone{Dania Waseem}{23I-2622}
+\authortwo{Taiba Tariq}{23I-2618}
+
+
+
+%\fypcoordinatorname{Name of FYP Coordinator}
+\title{Inflation Forecasting in Pakistan \\
+\vspace{0.75cm} 
+\Large{Advanced Statistics}\\
+\vspace{0.9cm} 
+\Large{Submission Date: 4th May 2025}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{fast-nuces-bs}
+
+\usepackage{blindtext}
+\usepackage{mathptmx}% Times Roman font
+\usepackage[T1]{fontenc}
+\usepackage{lipsum} 
+\usepackage{sectsty}
+\usepackage{tikz-uml}
+\usepackage{titlesec}
+
+% Information about the Thesis 
+% -----------------------------------------------------------------------------
+% (All are compulsory, do not delete any line other than author Information)
+% For e.g., usually there are 3 students in a group, so leave authorone, 
+% authortwo, and authorthree, and delete authorfour.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\department{Department of Data Science}
+\faculty{Computer Science}
+\degreename{Computer Science}
+\campuscity{Islamabad}
+\authorone{Dania Waseem}{23I-2622}
+\authortwo{Tabia Tariq}{23I-2618}
+
+
+%\fypcoordinatorname{Name of FYP Coordinator}
+\title{Inflation Forecasting in Pakistan \\
+\vspace{0.75cm} 
+\Large{Advanced Statistics}\\
+\vspace{0.9cm} 
+\Large{Submission Date: 4th May 2025}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Former document starts below this
+\begin{document}
+
+
+% Project Title and Header
+\begin{center}
+    {\Huge \textbf{Inflation forecasting in Pakistan}} \\[0.3cm]
+    \hrulefill
+\end{center}
+
+\section{Introduction}
+\subsection{What is inflation?}
+Prices throughout whole economies tend to increase persistently during periods of time which defines inflation. Money loses purchasing ability when inflation occurs therefore each unit of currency obtains lower quantities of products and services. The Consumer Price Index (CPI) and Wholesale Price Index (WPI) serve as common tools to monitor inflation rates in economies. The Pakistani economy heavily depends on inflation because it impacts economic stability while shaping interest rates together with investment patterns and public living conditions. The accurate prediction of inflation remains essential for public administrators as well as business operators and consumer populations who need to base their choices in well-informed ways. The research applies ARIMA alongside Ridge Regression, LASSO and Elastic Net machines to process Pakistani historical data for forecasting future inflation patterns.
+
+
+\subsection{How to Identify Inflation and When It Becomes Dangerous?}
+When the prices of basic items such as food and fuel together with clothing and transport and housing escalate continuously over time it indicates that a specific country experiences inflation. The rising cost of basic items requires citizens to allocate a bigger amount of their budget to maintain their standard of purchasing power. The increasing cost of a loaf of bread from 50 rupees to 70 rupees last year until today represents rising inflation. Economists make use of Consumer Price Index (CPI) and Wholesale Price Index (WPI) to track price trends over time because they present average price data. The continual increase in these index numbers indicates inflation is taking place. Small levels of inflation exist naturally in economies since they stimulate spending and new investments. Too much inflation develops serious issues for the economy. Inflation devalues money possessions and damages savings while increasing living expenses which creates difficulties for low and middle-class households to buy necessities. Economists label inflation as hazardous when it persists at 6\% to 7\% above natural levels. The emergence of hyperinflation occurs with inflation rates exceeding 10\% thus creating a state of economic malfunction which threatens market stability. The monitoring of inflation is essential because proper steps must be implemented when inflation reaches dangerous heights.
+
+\subsection{What is inflation forecasting?}
+Forecasters predict changes in economic goods and service pricing through the process of inflation forecasting. The forecast indicates future inflation possibilities for economists as well as governments and businesses to make informed decisions. Experts apply mathematical and statistical models to past data consisting of price trends and interest rates and money supply and economic growth in order to generate their predictions. The precision of inflation predictions remains essential because it allows central banks to establish interest rates and directs government policies and enables businesses and individuals to take sound financial decisions. A central bank would implement interest rate increases when predicting substantial inflation to keep it under control. This project employs ARIMA and Ridge and LASSO and Elastic Net models to predict future inflation trends based on past data points so Pakistan can prepare for economic difficulties.
+
+\subsection{Objectives of this report}
+This report consists of core purposes that are designed to fulfill specific objectives related to inflation forecasting in Pakistan.
+
+\begin{enumerate}
+    \item To utilize multiple forecasting tools such as ARIMA, Ridge Regression, LASSO, and Elastic Net to predict inflation levels in Pakistan. The selected models will process past economic data to forecast future inflation patterns, providing insights into upcoming price movement tendencies.
+    
+    \item To compare the performance of the selected models in terms of accuracy, reliability, and effectiveness. Developed models will undergo analysis to identify the one that presents the most effective method for Pakistani inflation forecasting.
+    
+    \item To establish which variables hold the greatest effect on inflation levels in Pakistan. The study evaluates distinct model features to determine which economic variables—such as interest rates, exchange rates, and money supply measurements—specifically affect inflation.
+\end{enumerate}
+\clearpage
+\section{Literature Review}
+\subsection*{Paper 1: \textit{Inflation Forecasting Using Machine Learning Methods}}
+
+The research paper titled \textit{“Inflation Forecasting Using Machine Learning Methods”} by Baybuza I., published in the \textit{Russian Journal of Money and Finance} in 2018, focuses on enhancing inflation prediction using modern machine learning techniques. This study was conducted on the Russian economy and utilized various macroeconomic variables including consumer price indices, exchange rates, industrial production, and interest rates. The forecasting models applied in this research include \textbf{Boosting} and \textbf{Random Forest}, which are ensemble learning methods capable of capturing complex nonlinear relationships. The base years used for training the models span from 2003 to 2017. The study concludes that machine learning methods, especially ensemble models, offer more accurate and robust forecasts compared to traditional models, particularly during periods of economic instability or structural shifts.
+
+\subsection*{Paper 2: \textit{Phillips Curve Inflation Forecasts}}
+
+The paper titled \textit{“Phillips Curve Inflation Forecasts”} by James H. Stock and Mark W. Watson explores the use of the Phillips Curve model to forecast inflation in the \textbf{United States}. This research analyzes the relationship between inflation and economic activity, focusing on variables such as unemployment, labor costs, and inflation expectations. The study compares multiple variations of the Phillips Curve, including those with expectations terms and real activity indicators. Models were trained using data primarily from the **1960s to the early 2000s**, and the paper was published in **2008**. The results show that while the Phillips Curve still has forecasting value, its accuracy varies over time, particularly during periods of structural economic change.
+
+\subsection*{Paper 3: \textit{Short-term Inflation Forecasting Models for Turkey and a Forecast Combination Analysis}}
+
+The research paper \textit{“Short-term Inflation Forecasting Models for Turkey and a Forecast Combination Analysis”} analyzes various inflation forecasting models applied to the economy of \textbf{Turkey}. Published by authors including Fethi Öğünç and others, this study uses models such as \textbf{ARIMA}, \textbf{Factor Models}, and \textbf{VAR} (Vector Autoregression). The models are evaluated over the base period from \textbf{2005 to 2014}. The variables used include **CPI, exchange rates, output gap, import prices**, and other macroeconomic indicators. The paper finds that combining forecasts from multiple models improves prediction accuracy, especially in high-volatility environments.
+
+\subsection*{Paper 4: \textit{Forecasting China's Economic Growth and Inflation}}
+
+The paper titled \textit{“Forecasting China’s Economic Growth and Inflation”} by Patrick Higgins, Tao Zha, and Wenna Zhong focuses on macroeconomic forecasting in \textbf{China}. Published in \textbf{2022}, the study applies models such as \textbf{Bayesian Vector Autoregression (BVAR)} and \textbf{Factor-Augmented Models}. The forecasting models are built using data from \textbf{1995 to 2019}. Key variables include **GDP, CPI, industrial production, producer prices**, and monetary indicators. The paper concludes that models incorporating international factors and financial conditions outperform traditional domestic-only models.
+
+\subsection*{Paper 5: \textit{Evaluating Performance of Inflation Forecasting Models of Pakistan}}
+
+This paper, titled \textit{“Evaluating Performance of Inflation Forecasting Models of Pakistan”}, was authored by Muhammad Nadim Hanif and Muhammad Jahanzeb Malik and published in \textbf{2015} in the SBP Research Bulletin. The study focuses on \textbf{Pakistan} and compares the effectiveness of models such as \textbf{ARIMA}, \textbf{ARFIMA}, and \textbf{State Space Models}. It covers data from \textbf{2001 to 2014}, using variables like **headline CPI, interest rates, monetary aggregates**, and **exchange rates**. The paper finds that no single model performs best in all conditions and highlights the importance of model selection based on economic context.
+
+\subsection*{Paper 6: \textit{Growth and Inflation Forecasts for Germany: A Panel-Based Assessment of Accuracy and Efficiency}}
+
+The study \textit{“Growth and Inflation Forecasts for Germany: A Panel-Based Assessment of Accuracy and Efficiency”}, published in \textbf{2006}, examines professional forecasts in \textbf{Germany} using panel data methods. Authors assess the efficiency and accuracy of forecasts from different institutions using historical data from \textbf{1991 to 2005}. Key variables analyzed include **GDP growth, CPI inflation, industrial output**, and **survey-based expectations**. The paper uses \textbf{panel regression models} and concludes that although forecasts are unbiased on average, their efficiency varies over time and across institutions.
+
+\subsection*{Paper 7: \textit{Forecasting UK Consumer Price Inflation Using Inflation Forecasts}}
+
+This paper, titled \textit{“Forecasting UK Consumer Price Inflation Using Inflation Forecasts”} by Hossein Hassani and Emmanuel Sirimal Silva, focuses on inflation prediction in the \textbf{United Kingdom}. The study utilizes a combination of \textbf{ex-ante forecast-based models} and traditional time series methods, applied on datasets spanning from \textbf{1993 to 2012}. Variables considered include **CPI, inflation expectations, economic sentiment indices**, and **lagged inflation rates**. The paper concludes that incorporating expert forecasts as explanatory inputs enhances predictive accuracy compared to purely data-driven models.
+
+\subsection*{Paper 8: \textit{Inflation Rate Determinants in Saudi Arabia: A Non-Linear ARDL Approach}}
+
+The study \textit{“Inflation Rate Determinants in Saudi Arabia: A Non-Linear ARDL Approach”} by Abdulrahman A. Albahouth investigates inflation in \textbf{Saudi Arabia} using advanced econometric techniques. Published in \textbf{2025} in the journal \textit{Sustainability}, the paper uses the \textbf{Non-Linear ARDL} model to capture asymmetries in the relationships. It is based on data from \textbf{1990 to 2022} and includes variables like **oil prices, money supply (M2), government spending, exchange rate**, and **interest rates**. The findings show that inflation in Saudi Arabia is more responsive to positive shocks in oil prices and money supply than to negative shocks.
+
+
+\subsection*{Paper 9: \textit{Short-Term Forecasting of Inflation in Bangladesh with Seasonal ARIMA Processes}}
+
+The paper \textit{“Short-Term Forecasting of Inflation in Bangladesh with Seasonal ARIMA Processes”} by Tahsina Akhter applies time series modeling to inflation data from \textbf{Bangladesh}. Published in \textbf{2013}, this study uses \textbf{Seasonal ARIMA (SARIMA)} models trained on data from \textbf{2000 to 2012}. Variables include **monthly CPI**, **seasonal dummy variables**, and **trend terms**. The study concludes that SARIMA effectively captures seasonal and trend components in Bangladesh's inflation, making it suitable for short-term policy planning.
+
+
+\subsection*{Paper 10: \textit{Forecasting Inflation and Economic Growth of Pakistan Using Two Time Series Methods}}
+
+This study titled \textit{“Forecasting Inflation and Economic Growth of Pakistan Using Two Time Series Methods”} by Kishwer Sultana et al. focuses on the \textbf{Pakistani} economy. The paper, published in \textbf{2022}, applies \textbf{ARIMA} and \textbf{Exponential Smoothing} models to inflation and GDP data from \textbf{2000 to 2020}. It utilizes variables such as **CPI, GDP, interest rate**, and **money supply**. The results show that both models can reasonably predict inflation trends, but ARIMA provides more accurate forecasts, especially during periods of economic shocks.
+
+\section{Description of Variables and Data}
+
+The dataset used in this study contains annual macroeconomic indicators for Pakistan from 1980 to 2025. The primary objective is to forecast the annual inflation rate (\%) using various independent variables. Below is a detailed explanation of each variable included in the dataset.
+
+\begin{itemize}
+    \item \textbf{Inflation (\%)}: This is the dependent variable in our study. It represents the annual percentage change in the general price level of goods and services consumed in the economy.
+    
+    \item \textbf{Year}: Indicates the calendar year of the recorded data.
+    
+    \item \textbf{Population Growth (\%)}: Measures the annual growth rate of the population.
+    
+    \item \textbf{Consumer Price Index (CPI)}: Reflects changes in the price level of a basket of consumer goods and services.
+    
+    \item \textbf{Trade (\% of GDP)}: Represents the total trade (exports + imports) as a percentage of Gross Domestic Product.
+    
+    \item \textbf{Imports of Goods and Services (Annual \% Growth)}: Annual growth rate of imported goods and services.
+    
+    \item \textbf{Gross National Expenditure (\% of GDP)}: The total domestic and foreign investment and consumption expenditure as a percentage of GDP.
+    
+    \item \textbf{External Debt Stocks (\% of GNI)}: Measures a country’s external debt in relation to its Gross National Income.
+    
+    \item \textbf{Wholesale Price Index}: Reflects changes in the price level of goods at the wholesale level.
+    
+    \item \textbf{Food Production Index}: Index measuring changes in food production volume.
+    
+    \item \textbf{World Crude Oil Rates (\$)}: Global average crude oil prices, a crucial input cost indicator.
+    
+    \item \textbf{Unemployment Rate (\% of Total Labor Force)}: Indicates the percentage of the labor force that is without work but available and seeking employment.
+    
+    \item \textbf{Adolescent Fertility Rate}: The number of births per 1,000 women aged 15–19 years.
+    
+    \item \textbf{Age Dependency Ratio (\% of Working-age Population)}: Ratio of dependents (younger than 15 or older than 64) to the working-age population.
+    
+    \item \textbf{Urban Population Growth (Annual \%)}: Annual growth rate of the population living in urban areas.
+    
+    \item \textbf{Total Reserves (\% of Total External Debt)}: Measures a country’s reserves in relation to its external debt.
+    
+    \item \textbf{Exports of Goods and Services (Annual \% Growth)}: Annual growth in exports.
+    
+    \item \textbf{Adjusted Savings: Gross Savings (\% of GNI)}: Represents savings after accounting for education expenditures, depletion of natural resources, and pollution damages.
+\end{itemize}
+
+\subsection{Training and Testing Data}
+
+For the purpose of this study, the dataset is divided into two parts:
+
+\begin{itemize}
+    \item \textbf{Training Data (1980–2020):} This portion of the dataset is used to train machine learning models such as ARIMA, Ridge Regression, LASSO, and Elastic Net. The models learn patterns, trends, and relationships between the independent variables and the target variable, which is the annual inflation rate (\%).
+
+    \item \textbf{Testing Data (2021–2025):} This subset is used to evaluate the model’s performance and accuracy in predicting inflation. It is important to ensure that all independent variables (e.g., CPI, oil prices, unemployment rate) are available for these years so that the models can generate valid forecasts. If any variable data is missing for the testing period, it must be estimated or forecasted using suitable methods before applying the trained model.
+\end{itemize}
+
+This separation ensures that the models are not overfitted and are capable of generalizing well to unseen data.
+
+
+\section{Model Estimation (Introduction and Equations)}
+
+In this section, we estimate different types of models to analyze the impact of macroeconomic variables on inflation. Each model serves a unique purpose depending on the nature of the data (time series, multicollinearity, overfitting, etc.). Below we describe each model, what it is used for, what problems it solves, and how it treats variables and model complexity.
+
+\subsection{1. ARIMA Model (Autoregressive Integrated Moving Average)}
+The ARIMA model is used to analyze and forecast univariate time series data. It captures autocorrelation patterns through autoregressive (AR) and moving average (MA) terms, while differencing (I) ensures stationarity.
+
+ARIMA is a \textbf{time series model} used to forecast future values based on past trends, lags, and error terms. It is particularly effective when the dependent variable shows autocorrelation or trends over time. ARIMA helps in making the data stationary by differencing, which solves the problem of non-stationarity and autocorrelation. It models the relationship using:
+
+The ARIMA model, which stands for \textbf{Autoregressive Integrated Moving Average}, is used for time series forecasting. It combines three elements:
+
+\begin{itemize}
+    \item \textbf{AR (Autoregressive)}: Uses past values (lags) of the dependent variable to predict the current value.
+    \item \textbf{I (Integrated)}: Applies differencing to make the series stationary (removes trends or seasonality).
+    \item \textbf{MA (Moving Average)}: Uses past error terms to model the current value.
+\end{itemize}
+
+\subsubsection{1. Autoregressive (AR) Component}
+
+The AR part regresses the current value of the time series on its past values. The AR($p$) model is defined as:
+
+\begin{equation}
+    Y_t = \beta_0 + \beta_1 Y_{t-1} + \beta_2 Y_{t-2} + \dots + \beta_p Y_{t-p} + \varepsilon_t
+\end{equation}
+
+\textbf{Example:} If we are forecasting inflation in year 2024 ($Y_{2024}$), then:
+\begin{itemize}
+    \item $\beta_0$ is the base/intercept level of inflation.
+    \item $\beta_1 Y_{2023}$ represents the influence of last year's inflation.
+    \item $\beta_2 Y_{2022}$ captures inflation from two years ago.
+    \item $\varepsilon_t$ is the error term capturing unexplained shocks in 2024.
+\end{itemize}
+
+In simple terms, this means: \emph{"Inflation this year depends on inflation in previous years, plus some random shock."}
+
+\subsubsection{2. Moving Average (MA) Component}
+
+The MA part models the current value as a function of previous error terms (shocks). The MA($q$) model is:
+
+\begin{equation}
+    Y_t = \mu + \varepsilon_t + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \dots + \theta_q \varepsilon_{t-q}
+\end{equation}
+
+\textbf{Interpretation:}
+\begin{itemize}
+    \item $\mu$ is the mean of the series.
+    \item $\varepsilon_t$ is the current period's shock or error.
+    \item $\theta_1 \varepsilon_{t-1}$ captures the impact of last year’s forecasting error.
+\end{itemize}
+
+So for inflation in 2024, this equation says: \emph{"The inflation in 2024 is based on this year’s shock and previous years' forecast errors."}
+
+\subsubsection{3. Integrated (I) Component – Differencing}
+
+The "Integrated" part deals with making the series stationary by differencing. If the series is not stationary (i.e., has trends), we use first differencing:
+
+\begin{equation}
+    \Delta Y_t = Y_t - Y_{t-1}
+\end{equation}
+
+This is referred to as an \textbf{I(1)} process (Integrated of order 1).
+
+\textbf{Explanation:} We do this to remove trends. Instead of modeling the actual inflation level, we model the \emph{change} in inflation from one year to the next.
+
+If differencing is applied once ($d = 1$), then we’re modeling:
+\[
+\Delta Y_{2024} = Y_{2024} - Y_{2023}
+\]
+
+If the series is already stationary (no need for differencing), then $d = 0$ and this step is skipped.
+
+\subsubsection{4. Full ARIMA($p$, $d$, $q$) Model}
+
+The complete ARIMA model combines all three components into one:
+
+\begin{equation}
+    \phi(B)(1 - B)^d Y_t = \theta(B) \varepsilon_t
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item $\phi(B)$ is the autoregressive operator (lag terms),
+    \item $(1 - B)^d$ is the differencing operator (integration),
+    \item $\theta(B)$ is the moving average operator (error lags),
+    \item $B$ is the backshift operator: $B Y_t = Y_{t-1}$.
+\end{itemize}
+
+This model forecasts current inflation by combining:
+\begin{itemize}
+    \item How past inflation values impact the present (AR),
+    \item How past forecast errors affect the prediction (MA),
+    \item And whether the data needs differencing to become stable (I).
+\end{itemize}
+
+\subsection{2. Ridge Regression}
+
+Ridge Regression is a \textbf{regularized linear regression model} used when predictor variables are highly correlated (multicollinearity). In standard regression, multicollinearity can make coefficient estimates unstable and inflate their variances. Ridge adds an $L_2$ penalty to the loss function which reduces the size of all coefficients — giving \textbf{less weight to irrelevant variables and more to important ones}, but it does not eliminate any variables.
+
+This model reduces overfitting, improves prediction accuracy, and is especially useful when we have more variables than observations or when variables are correlated.
+
+\subsubsection{Ridge Regression Equation}
+
+The Ridge objective function is:
+
+\begin{equation}
+    \hat{\boldsymbol{\beta}}^{ridge} = \arg \min_{\boldsymbol{\beta}} \left\{ \sum_{i=1}^{n} (y_i - \beta_0 - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda \sum_{j=1}^{p} \beta_j^2 \right\}
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item $y_i$ is the response variable (e.g., \textbf{Inflation} for year $i$).
+    \item $x_{ij}$ are the predictor variables (e.g., \textbf{CPI}, \textbf{Unemployment Rate}, \textbf{WPI}, etc.).
+    \item $\beta_0$ is the intercept.
+    \item $\beta_j$ are the coefficients for the predictors.
+    \item $\lambda$ is the tuning (regularization) parameter that controls the amount of shrinkage.
+\end{itemize}
+
+\subsubsection{Interpretation in This Project}
+
+\begin{itemize}
+    \item When predictors like \textbf{CPI}, \textbf{WPI}, and \textbf{Oil Prices} are highly correlated, traditional OLS estimates become unstable or overly sensitive to small changes in the data.
+    \item Ridge Regression addresses this by shrinking the coefficients: large coefficients are penalized more heavily.
+    \item It does \textbf{not eliminate} any variables (i.e., it keeps all predictors in the model), but shrinks irrelevant or less important variables' coefficients closer to zero.
+    \item In this inflation forecasting context, Ridge allows us to include all potentially relevant economic indicators without worrying too much about multicollinearity.
+    \item Unlike OLS, Ridge often gives more reliable and stable predictions, especially when the number of predictors is large or they are correlated.
+\end{itemize}
+
+\subsection{3. Lasso Regression}
+
+Lasso Regression is another \textbf{regularization technique}, but unlike Ridge, it uses an $L_1$ penalty which forces some coefficients to become exactly zero. This means Lasso performs \textbf{variable selection by automatically removing less important variables}. This is useful when we suspect that many predictors have little or no effect on the dependent variable.
+
+However, when predictors are highly correlated, Lasso tends to keep only one and discard the rest, sometimes randomly. It can lead to better interpretability but may lose useful information in correlated data.
+
+\subsubsection{Lasso Objective Function}
+
+The Lasso estimator solves the following optimization problem:
+
+\begin{equation}
+    \hat{\boldsymbol{\beta}}^{lasso} = \arg \min_{\boldsymbol{\beta}} \left\{ \sum_{i=1}^{n} (y_i - \beta_0 - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda \sum_{j=1}^{p} |\beta_j| \right\}
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item $y_i$ is the target variable (e.g., inflation rate in year $i$).
+    \item $x_{ij}$ are the predictor variables (e.g., CPI, WPI, Oil prices, etc.).
+    \item $\beta_j$ are the coefficients associated with each predictor.
+    \item $\lambda$ is the tuning (regularization) parameter.
+\end{itemize}
+
+\subsubsection{Interpretation in This Project}
+
+\begin{itemize}
+    \item Lasso is beneficial when economic variables such as \textbf{CPI}, \textbf{Oil prices}, \textbf{Unemployment rate}, etc., are potentially highly correlated.
+    \item Unlike Ridge Regression, Lasso can \textbf{shrink some coefficients exactly to zero}, thereby performing automatic \textbf{variable selection}.
+    \item In the context of inflation modeling, this means Lasso helps identify the most relevant economic indicators, discarding the ones that do not contribute significantly.
+    \item This reduces model complexity, increases interpretability, and often improves out-of-sample prediction.
+    \item If $\lambda = 0$, the model behaves like ordinary least squares (OLS). If $\lambda$ is very large, most coefficients are pushed to zero.
+    \item This is helpful when we have many economic indicators, but not all are strong predictors of inflation.
+\end{itemize}
+
+\subsubsection{Advantages}
+
+\begin{itemize}
+    \item Handles multicollinearity by shrinking correlated variable coefficients.
+    \item Automatically removes irrelevant variables.
+    \item Enhances prediction accuracy and interpretability.
+\end{itemize}
+
+\subsection{4. Elastic Net Regression}
+Elastic Net Regression is a regularized regression method that linearly combines the penalties of Lasso (L1) and Ridge (L2) regression. It is especially useful in datasets where there are multiple correlated predictor variables and where feature selection is desired.
+
+\subsubsection{Elastic Net Objective Function}
+
+The Elastic Net estimates the regression coefficients by minimizing the following objective function:
+
+\begin{equation}
+    \hat{\boldsymbol{\beta}}^{enet} = \arg \min_{\boldsymbol{\beta}} \left\{ \sum_{i=1}^{n} (y_i - \beta_0 - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda_1 \sum_{j=1}^{p} |\beta_j| + \lambda_2 \sum_{j=1}^{p} \beta_j^2 \right\}
+\end{equation}
+
+Alternatively, it is often represented using a mixing parameter $\alpha$:
+
+\begin{equation}
+    \hat{\boldsymbol{\beta}}^{enet} = \arg \min_{\boldsymbol{\beta}} \left\{ \sum_{i=1}^{n} (y_i - \beta_0 - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda \left[ \alpha \sum_{j=1}^{p} |\beta_j| + (1 - \alpha) \sum_{j=1}^{p} \beta_j^2 \right] \right\}
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item $y_i$ is the response variable (e.g., inflation).
+    \item $x_{ij}$ are the economic predictor variables (e.g., CPI, WPI, oil prices, etc.).
+    \item $\beta_j$ are the regression coefficients.
+    \item $\lambda$ is the regularization parameter controlling the overall strength of the penalty.
+    \item $\alpha$ is the mixing parameter: 
+        \begin{itemize}
+            \item $\alpha = 1$ corresponds to Lasso.
+            \item $\alpha = 0$ corresponds to Ridge.
+            \item $0 < \alpha < 1$ gives a mix of both.
+        \end{itemize}
+\end{itemize}
+
+\subsubsection{Why Use Elastic Net in This Project?}
+
+\begin{itemize}
+    \item Some variables in the dataset (e.g., CPI and WPI) are highly correlated, which makes Lasso unstable.
+    \item Elastic Net performs both \textbf{variable selection (via L1)} and \textbf{coefficient shrinkage (via L2)}, giving a more balanced model.
+    \item It prevents the model from selecting just one among a group of correlated predictors — instead, it can retain grouped variables.
+    \item This is beneficial in inflation modeling, where many macroeconomic indicators might influence inflation jointly.
+\end{itemize}
+
+\subsubsection{Advantages}
+
+\begin{itemize}
+    \item Combines strengths of Ridge and Lasso.
+    \item Effective when number of predictors $p$ exceeds the number of observations $n$.
+    \item Handles multicollinearity and helps in feature selection.
+    \item Reduces the risk of overfitting by controlling model complexity.
+\end{itemize}
+
+
+\section{Summary Statistics}
+\subsection{Mean, Median, Mode, Quartiles of each variable}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sumstats.png}
+    
+    \includegraphics[width=0.8\textwidth]{sumstats2.png}
+    \caption{summary stats}
+\end{figure}
+\clearpage
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Variable} & \textbf{Min} & \textbf{1st Qu.} & \textbf{Median} & \textbf{Mean} & \textbf{Max} \\
+\hline
+Year & 1980 & 1991 & 2002 & 2002 & 2024 \\
+Inflation & 2.90 & 4.80 & 7.90 & 8.98 & 29.20 \\
+Population Growth & 1.302 & 1.887 & 2.677 & 2.578 & 4.178 \\
+CPI & 2.530 & 5.610 & 8.840 & 8.993 & 28.300 \\
+Trade (\% of GDP) & 21.46 & 28.60 & 32.36 & 31.35 & 38.50 \\
+Imports Growth & -20.89 & -3.35 & 1.99 & 3.89 & 35.05 \\
+GNE (\% of GDP) & 100.3 & 104.5 & 106.7 & 106.5 & 112.0 \\
+External Debt (\% of GNI) & 23.28 & 28.57 & 38.01 & 38.05 & 55.90 \\
+WPI & 7.60 & 17.45 & 42.31 & 69.77 & 250.00 \\
+Food Prod. Index & 26.57 & 41.28 & 60.47 & 68.53 & 125.88 \\
+Oil Prices & 13.06 & 19.37 & 35.48 & 43.42 & 105.01 \\
+Unemployment Rate & 3.10 & 4.70 & 5.90 & 5.51 & 8.30 \\
+Adolescent Fertility Rate & 41.01 & 50.90 & 69.19 & 74.37 & 110.80 \\
+Age Dependency Ratio & 69.40 & 74.62 & 85.54 & 82.34 & 92.12 \\
+Urban Pop. Growth & 1.878 & 2.624 & 3.328 & 3.323 & 5.344 \\
+Reserves (\% of Debt) & 4.380 & 8.128 & 13.754 & 16.453 & 37.081 \\
+Exports Growth & -12.93 & -1.35 & 3.11 & 6.47 & 33.47 \\
+Gross Savings (\% of GNI) & 6.30 & 14.90 & 17.30 & 17.15 & 24.40 \\
+\hline
+\end{tabular}
+\caption{Summary statistics for macroeconomic variables used in the analysis.}
+\label{tab:summary-stats}
+\end{table}
+\subsection{Box and whisker plots}
+    \includegraphics[width=0.95\textwidth]{box1.png}
+    
+\includegraphics[width=0.95\textwidth]{box2.png}
+
+
+\begin{itemize}
+    \item \textbf{Year:} Min ~ 1985, Max ~ 2024, Median ~ 2002, Mean ~ 2000, Outliers: None.
+
+    \item \textbf{Inflation:} Min ~ 3, Max ~ 18, Median ~ 7, Mean ~ 17.5, Outliers: ~ 23, 29, Skewness: Right-skewed. \\
+    Interpretation: Most inflation values are moderate, but a few high years (including outliers like 23 and 29) drastically increase the mean.
+
+    \item \textbf{Population Growth:} Min ~ 1.3, Max ~ 4.2, Median ~ 2.7, Mean ~ 2.7, Outliers: None, Skewness: Symmetrical. \\
+    Interpretation: Population growth is stable and evenly distributed between 1.3\% and 4.2\%.
+
+    \item \textbf{CPI:} Min ~ 3, Max ~ 21, Median ~ 9, Mean ~ 30, Outliers: ~ 27, Skewness: Strongly Right-skewed. \\
+    Interpretation: While most CPI values are moderate, one very high outlier (~ 27) pulls the mean far above the median, indicating occasional price surges.
+
+    \item \textbf{Trade (\% of GDP):} Min ~ 20, Max ~ 40, Median ~ 33, Mean ~ 30, Outliers: None, Skewness: Left-skewed. \\
+    Interpretation: Trade has mostly hovered around 33\%, with a few lower years bringing the mean down.
+
+    \item \textbf{Imports Growth (annual \%):} Min ~ -20, Max ~ 30, Median ~ 2, Mean ~ 5, Outliers: ~ 33, Skewness: Right-skewed. \\
+    Interpretation: Though most years show moderate growth, some high spikes (like +33\%) increase the mean.
+
+    \item \textbf{Gross National Expenditure (\% of GDP):} Min ~ 100, Max ~ 112, Median ~ 106, Mean ~ 106, Outliers: None, Skewness: Symmetrical. \\
+    Interpretation: National expenditure is tightly clustered around 106\%, showing a very consistent pattern.
+
+    \item \textbf{External Debt Stocks (\% of GNI):} Min ~ 24, Max ~ 56, Median ~ 36, Mean ~ 40, Outliers: None, Skewness: Right-skewed. \\
+    Interpretation: Most values are moderate, but higher debt years pull the mean above the median.
+
+    \item \textbf{Wholesale Price Index:} Min ~ 5, Max ~ 250, Median ~ 40, Mean ~ 125, Outliers: None, Skewness: Strongly Right-skewed. \\
+    Interpretation: While most wholesale price index values are clustered at the lower end, extreme high values cause a major skew.
+
+    \item \textbf{Food Production Index:} Min ~ 35, Max ~ 125, Median ~ 60, Mean ~ 80, Outliers: None, Skewness: Right-skewed. \\
+    Interpretation: Most values are on the lower side (around 60), but some high values pull the mean up, suggesting occasional surges in food production.
+
+    \item \textbf{World Crude Oil Rates:} Min ~ 10, Max ~ 105, Median ~ 35, Mean ~ 60, Outliers: None, Skewness: Right-skewed. \\
+    Interpretation: While crude oil rates were generally moderate, some high price years cause the mean to exceed the median.
+
+    \item \textbf{Unemployment Rate (\% of labor force):} Min ~ 3.1, Max ~ 7.8, Median ~ 5.9, Mean > 5.5, Outliers: ~ 8.5, Skewness: Right-skewed. \\
+    Interpretation: Unemployment was mostly stable around 5--6\%, but one or more high outlier years increased the mean, indicating brief periods of labor market stress.
+
+    \item \textbf{Adolescent Fertility Rate:} Min ~ 40, Max ~ 110, Median ~ 69, Mean ~ 71, Outliers: None, Skewness: Symmetrical. \\
+    Interpretation: Fertility rates are evenly distributed, showing a stable trend over time with no extreme values.
+
+    \item \textbf{Age Dependency Ratio:} Min ~ 69, Max ~ 100, Median ~ 86, Mean ~ 80, Outliers: None, Skewness: Left-skewed. \\
+    Interpretation: Most values are high, but a few lower values reduce the mean slightly, indicating a high dependent population.
+
+    \item \textbf{Urban Population Growth (annual \%):} Min ~ 1.7, Max ~ 5.5, Median ~ 3.4, Mean ~ 3.5, Outliers: None, Skewness: Symmetrical. \\
+    Interpretation: Urban population growth has been consistently moderate with no extreme deviations.
+
+    \item \textbf{Total Reserves (\% of External Debt):} Min ~ 5, Max ~ 37, Median ~ 13, Mean ~ 20, Outliers: None, Skewness: Right-skewed. \\
+    Interpretation: While reserves are generally low-to-moderate (10--25\%), some years had significantly higher reserves.
+
+    \item \textbf{Exports Growth (annual \%):} Min ~ -13, Max ~ 35, Median ~ 2, Mean ~ 10, Outliers: None, Skewness: Right-skewed. \\
+    Interpretation: Most years had modest export growth, but a few very high growth years increased the mean.
+
+    \item \textbf{Adjusted Gross Savings (\% of GNI):} Min ~ 11, Max ~ 24, Median ~ 17, Mean ~ 17.5, Outliers: ~ 4, Skewness: Left-skewed. \\
+    Interpretation: Savings rates are generally healthy, but one very low year drags the mean down, hinting at economic stress.
+\end{itemize}
+
+
+\subsection{Scatterplots}
+\includegraphics[width=0.95\textwidth,height=0.6\textheight]{sp1.png}
+\begin{table}[h]
+\centering
+
+\caption*{Summary of Correlation Direction and Strength}
+\footnotesize
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Variable} & \textbf{Correlation with Inflation} \\
+\hline
+Population Growth (pop\_growth) & Weak positive \\
+Consumer Price Index (CPI) & Strong Positive \\
+Trade as \% of GDP (Trade..ofGDP) & Positive \\
+Imports of Goods and Services & weak negative \\
+Gross National Expenditure (\% of GDP) & weak Positive \\
+External Debt Stocks (\% of GNI) & weak Positive \\
+Wholesale Price Index &  Positive \\
+Food Production Index & Weak Negative \\
+World Crude Oil Rates & positive \\
+Unemployment Rate & No Clear Correlation \\
+Adolescent Fertility Rate & no clear correlation \\
+Age Dependency Ratio & Weak Negative \\
+Urban Population Growth & Weak Negative \\
+Total Reserves (\% of External Debt) & Weak Negative \\
+Exports of Goods and Services & Weak Positive \\
+Adjusted Gross Savings (\% of GNI) & Weak Negative \\
+\hline
+\end{tabular}
+\end{table}
+\subsection{Scatterplots of Significant variables}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.1\textwidth,height=0.6\textheight]{ml.png}
+    \caption{Significant Variables}
+\end{figure}
+
+As shown above, the scatter plots visualize the relationships between the selected variables. The variables marked with an asterisk (\textsuperscript{*}) were found to be statistically significant, i.e., their p-values were less than 0.05. These variables demonstrate a notable linear relationship with other indicators in the dataset.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.1\textwidth,height=0.6\textheight]{sp2.png}
+    \caption{scatter plot}
+    \label{fig:significant_vars}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth,height=0.6\textheight]{cm.png}
+    \caption{Correlation Matrix}
+    \label{fig:corr_matrix}
+\end{figure}
+\clearpage
+
+\section{Findings/Results}
+
+\subsection{ARIMA}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{change.png}
+    \caption{[1980-2020 Inflation Time Series (Training Data]}
+\end{figure}
+
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{ar2.png}
+    \caption{[Actual Inflation Values and predicted using ARIMA]}
+\end{figure}
+
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{ar3.png}
+    \caption{[ARIMA Residuals]}
+\end{figure}
+
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{ar4.png}
+    \caption{[Evaluation Metrics ARIMA]}
+\end{figure}
+
+\subsection{LASSO}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{lasso1.png}
+    \caption{[Evaluation Metrics LASSO]}
+\end{figure}
+
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{lasso2.png}
+    \caption{[Actual Inflation Values and predicted using LASSO]}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth,height=0.6\textheight]{lasso3.png}
+    \caption{[Graph actual vs Predicted LASSO]}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth,height=0.6\textheight]{lasso4.png}
+    \caption{[LASSO Residuals]}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{lasso5.png}
+    \caption{[Scatter plot with line]}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{lasso6.png}
+\end{figure}
+
+\subsection{Ridge}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{ridge1.png}
+    \caption{[Evaluation Metrics Ridge]}
+\end{figure}
+
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{ridge2.png}
+    \caption{[Actual Inflation Values and predicted using Ridge]}
+\end{figure}
+
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{ridge3.png}
+\end{figure}
+
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{ridge4.png}
+\end{figure}
+
+\subsection{Elastic Net}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{en1.png}
+\end{figure}
+
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{en2.png}
+\end{figure}
+
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{en3.png}
+\end{figure}
+
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{en4.png}
+\end{figure}
+
+\section*{Conclusion}
+
+In this study, we employed four different models to forecast inflation for the years 2021–2024 and compared their performances using the Mean Squared Error (MSE) metric:
+
+\begin{itemize}
+    \item \textbf{ARIMA Model}: MSE = 245.37
+    \item \textbf{LASSO Regression}: MSE = 30.42
+    \item \textbf{Ridge Regression}: MSE = 37.58
+    \item \textbf{Elastic Net}: MSE = 35.52
+\end{itemize}
+
+\vspace{1em}
+
+Among the models, the \textbf{LASSO Regression} achieved the lowest MSE of 30.42, indicating the best predictive performance on the test data. This suggests that LASSO not only fits the data well but also effectively avoids overfitting by performing automatic variable selection and shrinking the coefficients of less relevant predictors to zero. As a result, it simplifies the model and enhances interpretability.
+
+In contrast, the ARIMA model showed significantly higher error (MSE = 245.37), primarily due to the presence of non-stationarity and its inability to capture the complex multivariate relationships among predictors. While ARIMA accounted for autocorrelation using time series components, its failure to fully address non-stationarity, as indicated by the Augmented Dickey-Fuller test (p-value = 0.15), led to poor forecasting performance.
+
+Both Ridge and Elastic Net models performed reasonably well but were slightly inferior to LASSO in terms of MSE. The Ridge model includes all predictors by applying an $L_2$ penalty, which helps in handling multicollinearity but doesn't perform variable selection. The Elastic Net combines both $L_1$ and $L_2$ penalties, offering a compromise between Ridge and LASSO, but still couldn't outperform the sparsity-inducing nature of LASSO in this case.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth,height=0.5\textheight]{combined.png}
+    \caption{Actual vs Predicted Inflation (2021–2024) for All Models}
+    \label{fig:comparison}
+\end{figure}
+
+In conclusion, \textbf{LASSO is the best-performing model} for forecasting inflation in this study due to its low prediction error, ability to handle irrelevant predictors via regularization, and simplicity in model interpretation. Future work can consider combining time series dynamics and regularized regression to further improve forecasting performance.
+
+\section{References}
+\begin{itemize}
+    \item Baybuza, I. (2018). Inflation forecasting using machine learning methods. \textit{Russian Journal of Money and Finance}, 77(4), 42–59. Central Bank of the Russian Federation.
+
+     
+    \item Stock, J. H., \& Watson, M. W. (2008). Phillips curve inflation forecasts. In \textit{NBER Working Paper Series}. National Bureau of Economic Research.\newline \url{https://www.nber.org/papers/w14322}
+
+    \item Öğünç, F., Akdoğan, K., Başer, S., Chadwick, M. G., Ertuğ, D., Hülagü, T., Kösem, S., Özmen, M. U., \& Tekatlı, N. (2017). Short-term inflation forecasting models for Turkey and a forecast combination analysis. \textit{Central Bank of the Republic of Turkey Working Paper}.
+
+    \item Hanif, M. N., \& Malik, M. J. (2015). Evaluating performance of inflation forecasting models of Pakistan. \textit{SBP Research Bulletin}, 11(1).
+
+    \item Hanif, M. N., \& Malik, M. J. (2015). Evaluating performance of inflation forecasting models of Pakistan. \textit{SBP Research Bulletin}, 11(1).
+
+
+    \item Hassani, H., \& Silva, E. S. (2014). Forecasting UK consumer price inflation using inflation forecasts. \textit{Applied Economics}, Routledge.
+
+    % Reference for Paper 8
+    \item Albahouth, A. A. (2025). Inflation rate determinants in Saudi Arabia: A non-linear ARDL approach. \textit{Sustainability}, 17(3), 1036. \newline \url{https://doi.org/10.3390/su17031036}
+
+    % Reference for Paper 9
+    \item Akhter, T. (2013). Short-term forecasting of inflation in Bangladesh with seasonal ARIMA processes. \textit{Munich Personal RePEc Archive (MPRA)}.\newline \url{https://mpra.ub.uni-muenchen.de/id/eprint/48599}
+
+    % Reference for Paper 10
+    \item Sultana, K., Rahim, A., Moin, N., Aman, S., \& Ghauri, S. P. (2022). Forecasting inflation and economic growth of Pakistan using two time series methods. \textit{Journal of Economic Studies}.
+    \item GeeksforGeeks, 
+    What is Ridge Regression?, 
+    \newline Available at: \url{https://www.geeksforgeeks.org/what-is-ridge-regression/}
+
+    \item{Lasso Regressions and Forecasting Models in Applied Stress Testing}, Chan-Lau, Jorge A., 
+    IMF Working Paper No. 17/244, International Monetary Fund, 2017.
+
+    \item International Monetary Fund. (2025). Inflation rate, average consumer prices – Pakistan. World Economic Outlook (April 2025). \newline Retrieved from \newline
+    https://www.imf.org/external/datamapper/PCPIPCH@WEO/WEOWORLD/PAK.
+       
+\end{itemize}
+
+
+\end{document}
+
